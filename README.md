@@ -1,2 +1,2 @@
-# goutil
-Miscellany of commons used in TCG projects
+# util
+Miscellany of commons used in TCG projects.
