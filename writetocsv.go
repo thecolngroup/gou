@@ -8,12 +8,12 @@ import (
 )
 
 // CSVEncoder is a custom encoder for marhsalling types to CSV files.
-type CSVEncoder func(t any) ([]byte, error)
+type CSVEncoder[T any] func(t T) ([]byte, error)
 
 // WriteToCSV writes the given data to a CSV file, optionally using the given encoders to custom marshal specific types.
 // Will write a header row if the given file is empty.
 // Wraps github.com/jszwec/csvutil
-func WriteToCSV(filename string, data interface{}, encoder ...CSVEncoder) error {
+func WriteToCSV(filename string, data interface{}, encoder ...any) error {
 	f, err := os.OpenFile(filename, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0o644)
 	if err != nil {
 		return err
