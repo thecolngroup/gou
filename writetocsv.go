@@ -19,7 +19,7 @@ func WriteToCSV(filename string, data interface{}, encoder ...any) error {
 		return err
 	}
 	// nolint:errcheck // Explicit err check via sync at end of function
-	f.Close()
+	defer f.Close()
 
 	// Wrap file in CSV struct encoder
 	w := csv.NewWriter(f)
