@@ -1,4 +1,5 @@
-package util
+// Package gou hosts simple helper functions and types for common tasks.
+package gou
 
 import (
 	"math"

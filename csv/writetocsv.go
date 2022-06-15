@@ -1,4 +1,5 @@
-package util
+// Package csv provides helpers to write CSV files.
+package csv
 
 import (
 	"encoding/csv"
@@ -7,10 +8,10 @@ import (
 	"github.com/jszwec/csvutil"
 )
 
-// CSVEncoder is a custom encoder for marhsalling types to CSV files.
+// CSVEncoder is a custom encoder for marshalling types to CSV files.
 type CSVEncoder[T any] func(t T) ([]byte, error)
 
-// WriteToCSV writes the given data to a CSV file, optionally using the given encoders to custom marshal specific types.
+// WriteToCSV writes the given data to a CSV file, optionally using the given encoders to marshal custom types.
 // Will write a header row if the given file is empty.
 // Wraps github.com/jszwec/csvutil
 func WriteToCSV(filename string, data interface{}, encoder ...any) error {

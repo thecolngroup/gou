@@ -1,4 +1,4 @@
-package util
+package gou
 
 import "fmt"
 
@@ -7,7 +7,7 @@ func ToString(v any) string {
 	return fmt.Sprint(v)
 }
 
-// ToInt converts int64 or float64 to int.
+// ToInt converts int64 or float64 to int or default value if nil.
 func ToInt(v any) int {
 	var i int
 	switch t := v.(type) {
@@ -21,7 +21,7 @@ func ToInt(v any) int {
 	return i
 }
 
-// ToFloat converts int or int64 to float64.
+// ToFloat converts int or int64 to float64 or default value if nil.
 func ToFloat(v any) float64 {
 	var f float64
 	switch t := v.(type) {
