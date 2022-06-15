@@ -1,4 +1,4 @@
-package gou
+package num
 
 import (
 	"math"

@@ -1,5 +1,5 @@
-// Package gou hosts simple helper functions and types for common tasks.
-package gou
+// Package num offers helpers for working with numbers.
+package num
 
 import (
 	"math"

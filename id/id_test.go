@@ -1,4 +1,4 @@
-package gou
+package id
 
 import (
 	"testing"
@@ -11,9 +11,9 @@ import (
 func TestID(t *testing.T) {
 
 	ids := []ID{
-		NewID(),
-		NewIDWithTime(time.Now().Add(time.Hour * 2)),
-		NewIDWithTime(time.Now().Add(time.Hour * 1)),
+		New(),
+		NewWithTime(time.Now().Add(time.Hour * 2)),
+		NewWithTime(time.Now().Add(time.Hour * 1)),
 	}
 	assert.False(t, slices.IsSorted(ids))
 

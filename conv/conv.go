@@ -1,4 +1,5 @@
-package gou
+// Package conv offers funcs for converting values.
+package conv
 
 import "fmt"
 

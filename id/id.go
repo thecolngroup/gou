@@ -1,4 +1,5 @@
-package gou
+// Package id offers a lexicographically sortable based on time.
+package id
 
 import (
 	"math/rand"
@@ -11,13 +12,13 @@ import (
 // Intended to wrap a ULID which is lexicographically sortable.
 type ID string
 
-// NewID returns a new ID with seed as time now.
-func NewID() ID {
-	return NewIDWithTime(time.Now())
+// New returns a new ID with seed as time now.
+func New() ID {
+	return NewWithTime(time.Now())
 }
 
-// NewIDWithTime returns a new ID with the given time as a seed.
-func NewIDWithTime(t time.Time) ID {
+// NewWithTime returns a new ID with the given time as a seed.
+func NewWithTime(t time.Time) ID {
 	entropy := ulid.Monotonic(rand.New(rand.NewSource(t.UnixNano())), 0)
 	return ID(ulid.MustNew(ulid.Timestamp(t), entropy).String())
 }
