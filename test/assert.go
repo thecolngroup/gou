@@ -1,5 +1,5 @@
-// Package assert enables approx equality assertion of structs that contain floats or decimals.
-package assert
+// Package test enables approx equality assertion of structs that contain floats or decimals.
+package test
 
 import (
 	"testing"
@@ -21,4 +21,8 @@ func EqualApprox[T any](t *testing.T, exp, act T, margin float64) {
 		cmpopts.EquateApprox(0, margin))
 
 	assert.Truef(t, equal, "Expected:\n%s\n Actual:\n%s\n", spew.Sdump(exp), spew.Sdump(act))
+}
+
+func Dump(v any) {
+	spew.Dump(v)
 }
